@@ -1,0 +1,52 @@
+= DependencyTrack Cloudflare module
+
+This is a Terraform module for https://dependencytrack.org/[DependencyTrack] components in Cloudflare.
+
+This module is designed to provide the edge components (DependencyTrack frontend, domain, route, _etc_) and some data persistency (R2 bucket for file storage).
+It does not provide the Dependency Track API, which is provided by a separate module
+
+== Assumptions
+
+This module assumes:
+
+. You have a Cloudflare account.
+. You have a domain registered in that account.
+. There is a Dependency Track API instance deployed, which has a resolveable url.
+
+== Development Environment
+
+Tools for developing this module are provided by https://mise.jdx.org[Mise en Place].
+Install them and enable the environment before starting:
+
+.Install and activate mise for Zsh. See https://mise.jdx.dev/getting-started.html[Getting started] for more.
+[console]
+----
+curl https://mise.run | sh
+mise trust
+mise install
+eval "$(mise activate zsh)"
+----
+
+== Contributing
+
+This repository uses the https://www.conventionalcommits.org[Conventional Commits] semantic for commit messages.
+These are used to generate release versions with https://www.semantic-release.org[Semantic Release].
+The source code is governed by pre-commit hooks, executed with Prek.
+Prek is included in the tooling provided by Mise.
+These hooks perform a series of automation tasks (generating documentation, validating and formatting code), as well as enforcing commit message style.
+We expect commits to be signed (`-S`) and have a sign-off message (`-s`) to help identify authorship.
+Before commiting and contributing to the module, please install the pre-commit hooks to your clone:
+
+[console]
+----
+prek install
+prek install --hook-type=commit-msg
+git commit
+----
+
+== Module details
+
+// BEGIN_TF_DOCS
+
+
+// END_TF_DOCS

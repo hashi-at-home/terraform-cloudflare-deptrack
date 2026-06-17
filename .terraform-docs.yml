@@ -1,0 +1,23 @@
+formatter: "asciidoc document"
+
+version: ""
+
+header-from: main.tf
+footer-from: ""
+
+recursive:
+  enabled: false
+
+sections:
+  hide: []
+
+output:
+  file: "README.adoc"
+  mode: inject
+  template: |-
+    // BEGIN_TF_DOCS
+    {{ .Content }}
+    // END_TF_DOCS
+
+output-values:
+  enabled: true
