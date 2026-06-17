@@ -5,6 +5,9 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
+        args:
+          - --args=--config=.terraform-docs.yml
+      - id: terraform_trivy
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
     rev: v9.25.0
     hooks:
